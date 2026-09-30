@@ -1,0 +1,2 @@
+import {readFileSync,existsSync} from 'node:fs';import {execFileSync} from 'node:child_process';
+const html=readFileSync('docs/index.html','utf8');for(const [,path] of html.matchAll(/(?:src|href)="([^"#]+)"/g)){if(/^(https?:|data:|mailto:|tel:)/.test(path))continue;if(!existsSync('docs/'+path.split('?')[0]))throw Error('Missing asset '+path);}for(const [,src] of html.matchAll(/<script src="([^"?]+)/g))execFileSync(process.execPath,['--check','docs/'+src]);console.log('Static entrypoint, linked assets and script syntax validated.');

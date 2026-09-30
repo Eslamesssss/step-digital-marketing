@@ -1,0 +1,130 @@
+/* STEP client motion system — compact, tactile and mobile-first. */
+.partners-stage{
+  display:grid;grid-template-columns:minmax(220px,.82fr) minmax(360px,1.18fr);
+  grid-template-rows:1fr auto;align-items:center;gap:24px 36px;min-height:510px;
+  background-color:#0047ff!important;overflow:hidden;
+}
+.partners-stage:before{
+  content:"";position:absolute;inset:-30%;pointer-events:none;
+  background:conic-gradient(from 120deg at 60% 50%,transparent 0 38%,#c7ff0028 44%,transparent 50% 100%);
+  animation:deck-light 10s linear infinite;
+}
+.partners-stage .club-heading{max-width:430px;align-self:center}
+.partners-stage .club-heading h2{font-size:clamp(34px,4.3vw,66px);line-height:.95}
+.partners-stage .club-heading p{max-width:34ch;color:#e9efff;margin-top:22px}
+.partners-stage .club-controls{grid-column:1/-1;margin:0;position:relative;z-index:8}
+.client-deck{position:relative;height:330px;perspective:1100px;isolation:isolate}
+.client-deck:before,.client-deck:after{
+  content:"";position:absolute;pointer-events:none;border:1px solid #c7ff0066;border-radius:50%;
+  width:300px;aspect-ratio:1;left:50%;top:50%;transform:translate(-50%,-50%) rotateX(70deg);
+}
+.client-deck:after{width:390px;border-color:#ffffff2b}
+.deck-trail{position:absolute;z-index:-1;inset:18% 4%;border-radius:50%;filter:blur(28px);background:#071d5b80}
+.deck-card{position:absolute;width:clamp(150px,17vw,220px);padding:10px;border-radius:16px!important;
+  background:linear-gradient(145deg,#fffffffa,#d9e4ffec);border:1px solid #fff;
+  box-shadow:0 22px 55px #00182e5c,0 0 0 1px #ffffff55 inset;
+  transform-style:preserve-3d;animation:deck-float 7s cubic-bezier(.45,0,.25,1) infinite;
+  animation-delay:calc(var(--i) * -1.3s);will-change:transform;
+}
+.deck-card .club-logo{height:clamp(92px,11vw,138px);background:var(--logo-bg)}
+.deck-card figcaption{font-size:12px;padding-top:8px;color:#080f1a}
+.deck-card:nth-child(2){left:2%;top:28%;z-index:2;--base:translate3d(0,0,-45px) rotate(-9deg)}
+.deck-card:nth-child(3){left:29%;top:12%;z-index:5;--base:translate3d(0,0,65px) rotate(2deg)}
+.deck-card:nth-child(4){right:1%;top:4%;z-index:3;--base:translate3d(0,0,-15px) rotate(9deg)}
+.deck-card:nth-child(5){right:14%;bottom:0;z-index:6;--base:translate3d(0,0,90px) rotate(-5deg)}
+.deck-card:nth-child(3):after{
+  content:"";position:absolute;inset:-1px;border-radius:inherit;box-shadow:0 0 34px #c7ff0073;pointer-events:none;
+  animation:deck-signal 2.6s ease-in-out infinite;
+}
+.section.partners{padding-block:64px;background:#080f1a!important}
+.partners .club-heading{display:grid;grid-template-columns:1fr minmax(260px,460px);gap:30px;align-items:end;margin-bottom:30px}
+.partners .club-heading h2{font-size:clamp(36px,5vw,72px);line-height:.95}
+.partners .club-heading p{margin:0;color:#c7ced8}
+.client-rails{display:grid;gap:14px;overflow:hidden;padding:18px 0;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.client-rail{overflow:hidden}.client-track{display:flex;width:max-content;animation:client-stream 34s linear infinite;will-change:transform}
+.client-rail--2 .client-track{animation-direction:reverse;animation-duration:39s}
+.client-group{display:flex;gap:14px;padding-inline-end:14px}
+.rail-card{flex:0 0 148px;width:148px;padding:8px;border-radius:10px!important;background:#ebeaf0;border:1px solid #ffffff2e;box-shadow:0 10px 24px #00000025;animation:none}
+.rail-card .club-logo{height:82px;border-radius:5px!important;background:var(--logo-bg)}
+.rail-card figcaption{font-size:12px;line-height:1.3;padding:7px 2px 1px;color:#080f1a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.motion-paused .client-track,.motion-away .client-track,.motion-paused .deck-card,.motion-away .deck-card,.motion-paused:before,.motion-away:before{animation-play-state:paused}
+@media(hover:hover) and (pointer:fine){
+  .deck-card:hover{animation-play-state:paused;z-index:10;box-shadow:0 28px 70px #00182e78,0 0 0 2px #c7ff00}
+  .rail-card{transition:transform .22s cubic-bezier(.16,1,.3,1),background-color .22s ease}.rail-card:hover{transform:translateY(-4px);background:#fff}
+}
+@keyframes deck-float{0%,100%{transform:var(--base) translateY(0) rotateX(0)}35%{transform:var(--base) translateY(-11px) rotateX(2deg)}68%{transform:var(--base) translateY(5px) rotateX(-1deg)}}
+@keyframes deck-signal{0%,100%{opacity:.2}50%{opacity:1}}
+@keyframes deck-light{to{transform:rotate(360deg)}}
+@keyframes client-stream{to{transform:translateX(calc(-50%))}}
+
+@media(max-width:720px){
+  .partners-stage{display:block;min-height:0;padding:28px 18px 22px!important}
+  .partners-stage .club-heading{max-width:300px}.partners-stage .club-heading h2{font-size:clamp(34px,11vw,48px)}
+  .partners-stage .club-heading p{font-size:15px;line-height:1.55;margin-top:14px}
+  .client-deck{height:246px;margin:14px -4px 6px}.client-deck:before{width:220px}.client-deck:after{width:280px}
+  .deck-card{width:126px;padding:7px;border-radius:10px!important}.deck-card .club-logo{height:78px}.deck-card figcaption{font-size:10px;padding-top:6px}
+  .deck-card:nth-child(2){left:0;top:33%}.deck-card:nth-child(3){left:28%;top:10%}.deck-card:nth-child(4){right:0;top:2%}.deck-card:nth-child(5){right:15%;bottom:0}
+  .partners-stage .club-controls{margin-top:8px}
+  .section.partners{padding-block:44px}.partners .club-heading{display:block;margin-bottom:16px}.partners .club-heading h2{font-size:clamp(31px,9vw,44px)}.partners .club-heading p{font-size:15px;margin-top:16px}
+  .client-rails{margin-inline:-14px;padding-block:12px;gap:10px;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+  .client-group{gap:10px;padding-inline-end:10px}.rail-card{flex-basis:108px;width:108px;padding:6px}.rail-card .club-logo{height:60px}.rail-card figcaption{font-size:10px;padding-top:5px}
+  .partners .club-controls{margin-top:16px}
+
+  .work .container{width:100%}.work .section-head,.work .work-filters{margin-inline:14px}
+  .work .section-head{margin-bottom:28px}.work .work-filters{margin-bottom:22px}
+  .work .projects{display:flex!important;grid-template-columns:none!important;gap:12px!important;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:14px;padding:0 14px 18px;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#c7ff00 #1b2635}
+  .work .case-card{flex:0 0 min(82vw,330px);scroll-snap-align:start;padding:7px;border-radius:8px}
+  .work .case-cover{aspect-ratio:4/3!important;border-radius:4px!important}
+  .work .case-summary{padding:13px 8px 10px;gap:7px}.work .case-summary h3{font-size:20px;line-height:1.1;margin:4px 0 0}.work .case-summary span{font-size:10px}.work .case-summary p{font-size:13px;line-height:1.45;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+  .work .case-card[hidden]{display:none!important}
+}
+@media(max-width:380px){.deck-card{width:112px}.deck-card .club-logo{height:68px}.work .case-card{flex-basis:84vw}}
+@media(prefers-reduced-motion:reduce){
+  .partners-stage:before,.deck-card,.deck-card:after,.client-track{animation:none!important}
+  .client-rail{overflow-x:auto;scrollbar-width:none}.client-track{transform:none}.client-group[aria-hidden="true"]{display:none}
+}
+
+/* Heavy editorial display type, with open spacing rather than touching letters. */
+html:not([lang=ar]) h1,html:not([lang=ar]) h2,html:not([lang=ar]) h3,
+html:not([lang=ar]) .club-heading h2,html:not([lang=ar]) .case-summary h3{
+  font-family:'Dela Gothic One','Plus Jakarta Sans',sans-serif!important;
+  font-weight:400!important;letter-spacing:-.025em;line-height:1.18;
+  overflow-wrap:normal;word-break:normal;text-wrap:balance;
+}
+html[lang=ar] h1,html[lang=ar] h2,html[lang=ar] h3{font-weight:900!important;letter-spacing:0;line-height:1.4}
+.hero h1{font-size:clamp(42px,5.6vw,86px);letter-spacing:-.025em}
+.hero .partners-stage{display:block;min-height:0;height:auto;padding:28px!important}
+.hero .partners-stage .club-heading h2{font-size:clamp(24px,2.4vw,34px)}
+.section-head h2,.process-title h2,.partners .club-heading h2{font-size:clamp(28px,3.8vw,56px)}
+.hero .partners-stage:before,.client-deck:before,.client-deck:after,.deck-trail,.deck-card:after{display:none}
+.client-deck{height:224px;width:100%;max-width:390px;margin:20px auto;perspective:none}
+.client-deck .deck-card{width:108px;padding:6px;animation:client-drift 6s ease-in-out infinite;animation-delay:calc(var(--i) * -1.4s);transform:none;box-shadow:0 10px 24px #080f1a30}
+.client-deck .deck-card:nth-child(2){left:3%;top:5px;right:auto;bottom:auto;--angle:-5deg}
+.client-deck .deck-card:nth-child(3){left:auto;right:6%;top:22px;bottom:auto;--angle:4deg}
+.client-deck .deck-card:nth-child(4){left:12%;top:118px;right:auto;bottom:auto;--angle:3deg}
+.client-deck .deck-card:nth-child(5){left:auto;right:0;top:130px;bottom:auto;--angle:-4deg}
+.client-deck .deck-card .club-logo{height:62px}
+.client-deck .deck-card figcaption{font-size:12px;line-height:1.3;padding:6px 0 0;white-space:normal}
+.club-card .club-logo{position:relative;display:block;min-width:0;min-height:0;overflow:hidden}
+.club-card .club-logo img{
+  position:absolute;inset:0;display:block;box-sizing:border-box;
+  width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;
+  min-width:0!important;min-height:0!important;padding:7px;
+  object-fit:contain!important;object-position:center!important;
+}
+.rail-card{width:154px;flex-basis:154px}.rail-card .club-logo{height:88px}
+.rail-card figcaption{white-space:normal;overflow:visible;text-overflow:clip;min-height:32px;font-size:12px}
+.motion-paused .deck-card,.motion-away .deck-card,.motion-hidden .deck-card,.motion-hidden .client-track{animation-play-state:paused!important}
+@keyframes client-drift{0%,100%{transform:translateY(0) rotate(var(--angle))}50%{transform:translateY(-5px) rotate(0deg)}}
+@media(max-width:720px){
+  .hero h1{font-size:clamp(32px,9.3vw,62px);line-height:1.2}
+  .hero .partners-stage{padding:24px 16px!important}
+  .hero .partners-stage .club-heading h2{font-size:clamp(23px,6.4vw,34px)}
+  .section-head h2,.process-title h2,.partners .club-heading h2{font-size:clamp(25px,6.8vw,38px)}
+  .client-deck{max-width:310px;height:220px;margin-block:20px}
+  .client-deck .deck-card{width:94px}.client-deck .deck-card .club-logo{height:54px}
+  .client-deck .deck-card:nth-child(4){left:8%;top:114px}.client-deck .deck-card:nth-child(5){right:0;top:126px}
+  .rail-card{width:124px;flex-basis:124px}.rail-card .club-logo{height:76px}
+  .rail-card figcaption{font-size:12px;min-height:32px}.work .case-summary h3{font-size:18px}
+}
+@media(prefers-reduced-motion:reduce){.client-deck .deck-card{animation:none!important;transform:none!important}}

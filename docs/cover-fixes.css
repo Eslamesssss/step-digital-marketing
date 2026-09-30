@@ -1,0 +1,8 @@
+.case-cover{margin:0}
+.case-art img{object-fit:contain}
+.case-cover:hover,.case-cover:focus-visible{background:var(--case-bg);border-color:transparent}
+.case-cover--full{aspect-ratio:4/3;background:#0a0d14}
+.case-cover--full:before,.case-cover--full:after,.case-cover--full .case-sequence,.case-cover--full .case-word,.case-cover--full .case-orbit,.case-cover--full .case-logo,.case-cover--full .case-monogram,.case-cover--full .case-type,.case-cover--full .case-view{display:none}
+.case-cover--full .case-art--full{inset:0;width:100%;height:100%;transform:none;box-shadow:none;background:#0a0d14}
+.case-cover--full .case-art--full img{width:100%;height:100%;object-fit:cover}
+.case-cover--full:hover .case-art--full,.case-cover--full:focus-visible .case-art--full{transform:scale(1.025)}

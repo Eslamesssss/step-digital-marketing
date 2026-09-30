@@ -1,0 +1,54 @@
+.case-images img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
+.case-images figcaption {
+  display: grid;
+  grid-template-columns: minmax(210px, .7fr) minmax(0, 1.3fr);
+  gap: 20px;
+  padding: 20px 24px;
+  color: #c2ccdd;
+}
+
+.case-images figcaption strong {
+  color: var(--foreground, #fff);
+  font-size: 13px;
+  letter-spacing: .1em;
+}
+
+.case-images figcaption span {
+  font-size: 14px;
+}
+
+.case-image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3px;
+  padding: 3px;
+  background: #111722;
+}
+
+.case-image-grid img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 720px) {
+  .case-images {
+    gap: 20px;
+  }
+
+  .case-images figcaption {
+    grid-template-columns: 1fr;
+    gap: 7px;
+    padding: 16px;
+  }
+
+  .case-image-grid {
+    grid-template-columns: 1fr;
+  }
+}

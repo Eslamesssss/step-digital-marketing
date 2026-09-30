@@ -1,0 +1,49 @@
+/* Client showcase: cobalt editorial surface, lime accents, original artwork. */
+.partners-stage,.section.partners{
+  background-color:#013ff6!important;
+  background-image:linear-gradient(#ffffff0a 1px,transparent 1px),linear-gradient(90deg,#ffffff0a 1px,transparent 1px);
+  background-size:40px 40px;
+  color:#fff;isolation:isolate;
+}
+.partners-stage{padding:32px!important;border:1px solid #ffffff25;border-radius:28px;position:relative;min-width:0;overflow:hidden}
+.club-heading{position:relative;z-index:1}
+.club-eyebrow{display:inline-block;padding:7px 12px;margin-bottom:22px;border:1px solid #ffffff80;border-radius:99px;font-size:12px;line-height:1.4;font-weight:800;letter-spacing:.06em;color:#fff}
+.club-heading h2{font-family:'Dela Gothic One','Plus Jakarta Sans',sans-serif!important;font-weight:400;letter-spacing:-.04em;line-height:1.12;margin:0;color:#fff!important;font-size:clamp(28px,3.3vw,50px)}
+.club-heading h2 span{display:block}.club-heading h2 span:last-child{color:#acec00}
+.club-heading p{font-size:16px;line-height:1.7;max-width:600px;color:#fff;margin:24px 0 0}
+.club-featured{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;padding:28px 4px 20px}
+.club-card{margin:0;min-width:0;padding:14px;background:linear-gradient(145deg,#fff,#e7eeff);border:1px solid #fff;border-radius:22px;box-shadow:0 12px 26px #00182e22;animation:club-bob 6s ease-in-out infinite;animation-delay:var(--float-delay)}
+.club-logo{height:130px;background:var(--logo-bg);border-radius:14px;overflow:hidden;display:grid;place-items:center}
+.club-logo img{width:100%;height:100%;max-height:130px;object-fit:contain;filter:none!important;mix-blend-mode:normal!important;transform:none!important}
+.club-card figcaption{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:800;text-align:center;line-height:1.4;letter-spacing:0;color:#00182e;padding-top:12px;overflow-wrap:anywhere}
+.club-controls{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:20px}
+.club-controls a{display:inline-flex;align-items:center;min-height:44px;border-radius:99px;background:#acec00;color:#00182e!important;padding:10px 18px;font-size:14px;font-weight:800}
+.club-controls .motion-toggle{position:static!important;margin:0!important;background:transparent;color:#fff;border:1px solid #ffffff90;border-radius:99px;padding:10px 16px;font-size:14px;min-height:44px}
+.section.partners{padding-block:72px;border:0}
+.partners .club-heading{max-width:980px;margin-bottom:36px}
+.partners .club-heading h2{font-size:clamp(36px,5.5vw,76px)}
+.club-directory{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;padding:28px;background:#fff;border-radius:28px}
+.club-directory .club-card{background:#f0f3fa;border-color:#e5e9f1;box-shadow:none}
+.club-directory .club-logo{height:150px}.club-directory .club-logo img{max-height:150px}
+.partners .club-controls{margin-top:32px}
+@keyframes club-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.motion-paused .club-card,.motion-away .club-card{animation-play-state:paused}
+@media(hover:hover){.club-card:hover{animation-play-state:paused;box-shadow:0 12px 24px #00182e28}}
+@media(max-width:1080px){.club-directory{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:720px){
+ .partners-stage{padding:24px 18px!important;border-radius:24px}
+ .club-heading h2{font-size:clamp(25px,7vw,40px)}
+ .club-eyebrow{font-size:12px;margin-bottom:18px}
+ .club-featured{gap:12px;padding:24px 0 12px}
+ .club-card{padding:10px;border-radius:18px}
+ .club-logo,.club-directory .club-logo{height:104px;border-radius:10px}
+ .club-logo img,.club-directory .club-logo img{max-height:104px}
+ .club-card figcaption{font-size:14px;padding-top:10px}
+ .club-controls{gap:10px}
+ .club-controls a,.club-controls .motion-toggle{font-size:12px;padding:10px 12px}
+ .section.partners{padding-block:48px}
+ .partners .club-heading h2{font-size:clamp(27px,7.4vw,42px)}
+ .club-directory{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding:14px;border-radius:22px}
+}
+html[lang=ar] .club-heading h2{font-family:'Noto Sans Arabic',Arial,sans-serif!important;font-weight:900;letter-spacing:0;line-height:1.4}
+@media(prefers-reduced-motion:reduce){.club-card{animation:none!important;transform:none!important}.club-controls .motion-toggle{display:none!important}}

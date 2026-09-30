@@ -1,0 +1,94 @@
+/* Reference-led composition: oversized words, floating client stickers, drawn marks. */
+body{background:#082776}
+main,footer{max-width:1500px;margin-inline:auto}
+header{background:#0047ffed!important;border-color:#ffffff30;color:#fff;box-shadow:none;backdrop-filter:blur(12px)}
+header .brand{background:#ebeaf0;border-radius:8px;padding:3px 10px;min-width:0}
+header .brand img{width:130px;height:44px}
+header .nav-links a{color:#fff!important}
+header .preference-button,header .menu{background:transparent;color:#fff;border-color:#ffffff70}
+.hero{position:relative;margin:20px 20px 0;border-radius:34px 34px 0 0;padding:150px 28px 54px;overflow:hidden;background-image:radial-gradient(circle at 88% 16%,#2e67ff 0,transparent 28%),radial-gradient(circle at 8% 76%,#002fc9 0,transparent 34%),linear-gradient(#ffffff0d 1px,transparent 1px),linear-gradient(90deg,#ffffff0d 1px,transparent 1px)!important;background-size:auto,auto,48px 48px,48px 48px!important}
+.hero-grid{position:relative;display:block;width:100%;max-width:1180px;min-height:0}
+.hero-copy{position:relative;text-align:left;z-index:1}
+.hero .kicker{display:none}
+.hero h1{font-size:clamp(58px,8vw,112px);max-width:1120px;margin:0;line-height:.98!important;letter-spacing:-.035em!important}
+.hero-line{display:block;white-space:nowrap;padding:0!important}
+.hero-line:nth-child(2){padding-left:8vw!important}.hero-line:nth-child(3){padding-left:2vw!important}
+.hero .hero-line:nth-child(3)>span{color:#c7ff00}
+.hero-bottom{align-items:flex-start;gap:18px;margin-top:32px;position:relative;z-index:6}
+.hero-bottom p{margin:0}.hero .text-link{font-size:14px}
+.hero #stage.partners-stage{position:relative!important;inset:auto!important;display:grid!important;grid-template-columns:1fr 1fr auto;grid-template-rows:auto auto;align-items:center;justify-items:center;gap:10px 18px;width:100%!important;max-width:520px;height:210px!important;min-height:0!important;padding:36px 34px 20px!important;margin:18px 0 0 auto!important;border:0!important;border-radius:0!important;background:none!important;box-shadow:none!important;overflow:visible!important;pointer-events:none;isolation:isolate;z-index:3}
+.hero #stage:before{content:""!important;display:block!important;position:absolute;z-index:-2;width:112%;height:15px;left:-8%;top:50%;background:#c7ff00;transform:rotate(-8deg) scaleX(0);transform-origin:left center;animation:hero-shift-in .8s cubic-bezier(.16,1,.3,1) .45s forwards!important}
+.hero #stage:after{content:""!important;display:block!important;position:absolute;z-index:-3;width:150px;height:150px;right:5%;top:26px;border-radius:50%;background:#080f1a;opacity:.93}
+.hero-clients-label{position:absolute;left:0;top:0;color:#fff;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.hero-client{position:relative;width:136px;max-width:100%;pointer-events:auto}
+.hero-client--one{grid-column:1;--tilt:-8deg;transform:translateY(8px)}
+.hero-client--two{grid-column:2;--tilt:7deg;transform:translateY(24px)}
+.hero-sticker{padding:8px!important;border-radius:16px!important;background:#ebeaf0!important;border:0!important;box-shadow:0 18px 38px #00174670;animation:hero-sticker-drift 6s ease-in-out infinite!important}
+.hero-sticker .club-logo{height:82px;border-radius:10px!important}
+.hero-sticker figcaption{display:none}
+.hero-client--two .hero-sticker{animation-delay:-3.5s!important}
+.hero #stage .motion-toggle{position:relative!important;inset:auto!important;grid-column:3;grid-row:2;justify-self:end;align-self:end;transform:none;margin:0!important;min-height:44px;padding:9px 14px;background:#080f1a;color:#fff;border:0;font-size:12px;pointer-events:auto}
+.hand-mark{position:absolute;width:64px;height:64px;color:#c7ff00;pointer-events:none;z-index:4}
+.hand-hash{right:3%;left:auto;top:-30px;transform:rotate(9deg) scale(1.15)}
+.hand-arrow{right:24%;top:28px;transform:rotate(-12deg)}
+.section-head,.process-title{position:relative}.section-scribble{right:0;bottom:-22px;transform:rotate(-70deg);color:var(--ice)}
+.services{margin:0 20px;z-index:5;border-radius:34px 34px 0 0;background:#fff;color:#080f1a;padding-top:58px}
+.services .section-head p,.services .service p{color:#48515d}
+.services .section-head h2:after,.process-title h2:after{display:none}
+.index{border:0!important;padding:0!important;background:none!important;transform:none!important}
+.services .index{color:#0047ff}
+.service-list{gap:18px}.service{border:0;background:#f1f1f4;color:#080f1a;border-radius:22px!important;padding:24px;min-height:0}
+.service h3{font-size:20px;line-height:1.2}.service .num{border-radius:99px;background:#0047ff;color:#fff}
+.service:hover{background:#c7ff00;color:#080f1a}.service .arrow{border-color:#080f1a44}
+.work,.process,.evidence{margin-inline:20px;background:var(--ink)}
+.case-card{border-radius:20px!important}.case-cover{border-radius:13px!important}
+.section.partners{margin-inline:20px;background:#0047ff!important;border-radius:30px}
+.partners .club-heading p{color:#e5edff}.rail-card{border-radius:16px!important}
+.process .step{border-radius:20px;background:var(--surface)}
+.contact{margin-inline:20px;border-radius:34px 34px 0 0}
+.contact .form{border-radius:24px}.contact h2{font-size:clamp(40px,6.6vw,92px)}
+footer{background:var(--ink);padding-inline:20px}
+@keyframes hero-shift-in{to{transform:rotate(-8deg) scaleX(1)}}
+@keyframes hero-sticker-drift{0%,100%{transform:rotate(var(--tilt)) translateY(0)}50%{transform:rotate(calc(var(--tilt) + 2deg)) translateY(-6px)}}
+.motion-paused .hero-sticker,.motion-away .hero-sticker,.motion-hidden .hero-sticker{animation-play-state:paused!important}
+@media(min-width:721px) and (max-width:1080px){.service-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){
+ header{top:12px;left:16px;right:16px;border-radius:18px}header .nav{height:64px;width:calc(100% - 22px);gap:8px}
+ header .brand img{width:95px;height:34px}header .brand{padding:3px 7px;min-width:0}
+ header .preference-button,header .menu{min-width:40px;padding:8px}
+ .hero{margin:6px 8px 0;padding:108px 20px 34px;border-radius:24px 24px 0 0}
+ .hero-copy{text-align:left}
+ .hero h1{font-size:clamp(42px,11.8vw,56px);line-height:.98!important;letter-spacing:-.035em!important}
+ .hero-line:nth-child(2){padding-left:5vw!important}.hero-line:nth-child(3){padding-left:0!important}
+ .hero-bottom{margin-top:26px;gap:18px;align-items:flex-start}.hero-bottom p{font-size:16px;line-height:1.5;max-width:30ch}
+ .hero .text-link{padding:9px 10px 9px 20px;font-size:13px}
+ .hero #stage.partners-stage{grid-template-columns:1fr 1fr;grid-template-rows:auto auto;height:190px!important;max-width:320px;gap:6px 18px;padding:30px 22px 8px!important;margin:22px auto 0!important}
+ .hero-client{width:108px}.hero-client--one{grid-column:1;grid-row:1}.hero-client--two{grid-column:2;grid-row:1;transform:translateY(22px)}
+ .hero-sticker{padding:7px!important;border-radius:14px!important}.hero-sticker .club-logo{height:66px}
+ .hero #stage .motion-toggle{grid-column:2;grid-row:2;justify-self:end;align-self:end;min-height:42px;padding:8px 12px}
+ .hero-clients-label{font-size:11px;top:0}
+ .hand-hash{right:-4px;top:-34px;transform:rotate(9deg) scale(.78)}
+ .hand-arrow{right:18%;top:36px;transform:rotate(-12deg) scale(.72)}
+ .services,.work,.process,.evidence,.section.partners,.contact{margin-inline:8px}
+ .services{padding-top:40px;border-radius:26px 26px 0 0}.service-list{grid-template-columns:1fr;gap:12px}
+ .service{padding:22px;display:grid;grid-template-columns:40px 1fr 34px;gap:14px;align-items:center}
+ .service h3{font-size:18px}.services .section-head{margin-bottom:28px}
+ .section-scribble{width:45px;height:45px;bottom:-25px}
+ .section.partners{border-radius:24px}.contact h2{font-size:clamp(29px,8vw,52px)}
+ .work .case-card{flex-basis:min(80vw,330px)}
+}
+/* Arabic display uses a real heavy geometric face with square dots. */
+html[lang=ar] body{font-family:'Cairo',Arial,sans-serif}
+html[lang=ar] h1,html[lang=ar] h2,html[lang=ar] h3,
+html[lang=ar] .case-summary h3,html[lang=ar] .club-heading h2{
+ font-family:'Cairo',Arial,sans-serif!important;font-weight:1000!important;
+ font-synthesis:none;letter-spacing:0!important;line-height:1.4;
+}
+html[lang=ar] .hero h1{font-size:clamp(2.25rem,7.8vw,7.5rem);line-height:1.4!important}
+html[lang=ar] .hero-line{white-space:normal;overflow-wrap:break-word}
+html[lang=ar] .hero-copy{text-align:right}
+html[lang=ar] .hero-line:nth-child(2){padding-left:0!important;padding-right:8vw!important}
+html[lang=ar] .hero-line:nth-child(3){padding-left:0!important;padding-right:2vw!important}
+.hero-client{direction:ltr}
+@media(max-width:720px){html[lang=ar] .hero h1{font-size:clamp(2.65rem,12.2vw,4.6rem);line-height:1.12!important}html[lang=ar] .hero-line:nth-child(2){padding-right:4vw!important}html[lang=ar] .hero-line:nth-child(3){padding-right:0!important}}
+@media(prefers-reduced-motion:reduce){.hero-sticker{animation:none!important;transform:rotate(var(--tilt))}.hero #stage:before{animation:none!important;transform:rotate(-8deg) scaleX(1)}}

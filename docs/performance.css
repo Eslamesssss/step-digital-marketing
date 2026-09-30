@@ -1,0 +1,32 @@
+/* One shared console; the meter is a decorative readout accent, not a data scale. */
+.evidence .section-head{grid-template-columns:1fr}
+.performance-console{border:1px solid var(--border);border-radius:18px;background:var(--surface);overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.08)}
+.console-toolbar{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:20px 30px;border-bottom:1px solid var(--border);background:linear-gradient(110deg,rgba(25,88,255,.08),transparent 70%)}
+.console-label{display:inline-flex;align-items:center;gap:12px;font-size:14px;font-weight:700;color:var(--foreground)}
+.console-label i{width:7px;height:7px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px rgba(25,88,255,.12)}
+.console-period{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--secondary)}
+.console-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.console-kpi{min-width:0;padding:30px;position:relative}
+.console-kpi+.console-kpi{border-inline-start:1px solid var(--border)}
+.kpi-heading{display:flex;justify-content:space-between;gap:16px;align-items:center}
+.kpi-heading h3{margin:0;color:var(--secondary);font-size:16px;font-weight:600;letter-spacing:0}
+.kpi-sequence{color:var(--secondary);font:12px ui-monospace,SFMono-Regular,Consolas,monospace;opacity:.7}
+.kpi-readout{margin:24px 0 28px}
+.kpi-number{display:block;direction:ltr;unicode-bidi:isolate;text-align:start;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:clamp(2.75rem,5.6vw,5.25rem);line-height:1.15;font-weight:500;font-variant-numeric:tabular-nums;letter-spacing:-.065em;color:var(--foreground)}
+.kpi-accessible{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.kpi-meter{height:14px;position:relative;overflow:hidden;background:var(--ink2);mask-image:repeating-linear-gradient(90deg,#000 0,#000 3px,transparent 3px,transparent 8px)}
+.kpi-meter span{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--blue),var(--ice));opacity:.6;transform-origin:left}
+.kpi-change{display:flex;align-items:flex-start;flex-wrap:wrap;gap:10px 12px;margin-top:24px}
+.kpi-change b{font:600 14px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--ice);background:rgba(25,88,255,.09);padding:4px 9px;border:1px solid rgba(25,88,255,.22);border-radius:6px;white-space:nowrap}
+.kpi-change>span{flex:1;min-width:110px;max-width:180px;color:var(--secondary);font-size:12px;line-height:1.5;padding-top:4px}
+.console-enter .kpi-meter span{animation:console-meter 1.4s var(--ease) both}
+.console-enter .console-label i{animation:console-pulse 1.4s ease-out 2}
+.evidence .evidence-note{font-size:14px;margin-top:24px}
+html[lang=ar] .kpi-number{text-align:right}
+html[lang=ar] .console-period{letter-spacing:0}
+html[dir=rtl] .kpi-meter span{transform-origin:right}
+@keyframes console-meter{from{transform:scaleX(0);opacity:.2}to{transform:scaleX(1);opacity:.6}}
+@keyframes console-pulse{50%{box-shadow:0 0 0 7px rgba(25,88,255,.04)}}
+@media(max-width:960px){.console-kpi{padding:24px 20px}.console-toolbar{padding:20px}.kpi-number{font-size:clamp(2.5rem,6vw,4rem)}}
+@media(max-width:720px){.console-grid{grid-template-columns:1fr}.console-kpi{padding:24px}.console-kpi+.console-kpi{border-inline-start:0;border-top:1px solid var(--border)}.kpi-readout{margin:16px 0 22px}.kpi-number{font-size:clamp(2.75rem,14vw,4.5rem)}.kpi-change>span{max-width:none}.console-toolbar{padding:18px 24px}.console-period{letter-spacing:0}.kpi-change{margin-top:20px}}
+@media(prefers-reduced-motion:reduce){.console-enter .kpi-meter span,.console-enter .console-label i{animation:none}}
