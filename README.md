@@ -1,6 +1,6 @@
 # STEP Digital Marketing
 
-Official STEP Digital Marketing website. A bilingual, responsive portfolio featuring selected work, capabilities, client brands, and contact information.
+Official bilingual STEP Digital Marketing website, including selected work, capabilities, client brands, and contact details.
 
 ## Preview locally
 
@@ -9,8 +9,10 @@ npm install
 npm run dev
 ```
 
-The static site lives in `docs/` for GitHub Pages. `npm run build` validates the entry point, linked assets, and JavaScript syntax.
+The ready-to-publish website is in `docs/`. `npm run build` validates the entry point, linked assets, and JavaScript syntax.
 
-## Publishing
+## Enable GitHub Pages
 
-GitHub Pages serves the `main` branch from `/docs`. Content updates in `docs/` become available after committing to `main`.
+In this repository, open **Settings → Pages**. Under **Build and deployment**, select **Deploy from a branch**, then set the branch to **main** and folder to **/docs**, and save. GitHub Pages will publish this static site after processing the branch.
+
+Future changes to the website in this repository should be made in `docs/` and committed to `main`. This repository is a snapshot of the current STEP Site; edits made elsewhere are not automatically synchronized to GitHub.
