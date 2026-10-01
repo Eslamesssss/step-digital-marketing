@@ -121,7 +121,6 @@ html:not([lang=ar]) .hero-line:nth-child(2)>span{white-space:nowrap}
 .hero-proof span{padding:0 22px;border-inline-end:1px solid #ffffff35;font-size:var(--fs-label);font-weight:800;letter-spacing:var(--ls-label);text-align:center}
 .hero-proof span:last-child{border:0}
 .hero .side-label{right:28px;bottom:78px;color:#ffffffa6;font-size:11px}
-html[dir=rtl] .hero .side-label{right:auto;left:28px}
 
 /* ───────── 4. Clients & partners ───────── */
 .client-world{padding:var(--sp-section) 0;background:var(--cw-bg);color:var(--fg);position:relative;overflow:hidden}
