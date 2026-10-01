@@ -110,6 +110,9 @@ html:not([lang=ar]) .hero-line:nth-child(2)>span{white-space:nowrap}
 .hero-orbit--two{width:430px;height:200px;right:7%;top:35%;border-color:#c7ff0080;transform:rotate(18deg)}
 .hero-character{position:absolute;z-index:2;inset:auto -3% -18% auto;width:min(720px,98%);margin:0;filter:drop-shadow(0 35px 35px #02091a7a);pointer-events:none}
 .hero-character>img{width:100%;height:auto}
+/* Head layer: same 900x1125 canvas as the body, pivoting at the helmet/neck joint. Tracking is driven by hero-head.js (transform only). */
+.hero-character-head{position:absolute;inset:0;height:100%;transform-origin:51.1% 24.2%;pointer-events:none}
+.hero-character-head.is-tracking{will-change:transform}
 .hero-sticker{position:absolute;z-index:4;right:0;top:19%;display:grid;place-items:center;width:116px;height:116px;border-radius:50%;background:var(--step-lime);color:var(--step-navy);font-size:14px;line-height:1.1;text-align:center;font-weight:900;transform:rotate(9deg);box-shadow:0 0 0 8px var(--step-navy)}
 .hero-note{position:absolute;z-index:4;left:0;bottom:21%;font-family:'Comic Sans MS','Comic Neue',cursive;font-size:19px;line-height:1.15;color:#fff;transform:rotate(-7deg)}
 .hero-note:after{content:'';display:block;width:92px;height:4px;margin:10px 0 0;background:var(--step-lime);transform:rotate(-4deg)}

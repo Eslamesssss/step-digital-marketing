@@ -40,3 +40,7 @@ Client recognition is split into a compact layered featured cluster and two cont
 - **Type:** `--fs-display-xl … --fs-label` with a separate Arabic scale (`html[lang=ar]`): no tracking, taller line-heights, weights 800/700, `font-synthesis:none`, nav/CTA 15px.
 - **RTL:** logical offsets, direction-aware hover (`--dir`), flipped directional glyphs, LTR ribbons (seamless loop in RTL), hero artwork no longer mirrored.
 - **Fixes:** white-on-lime contact text, services card contrast, case-card hover overridden by animation fill, 4px layout shift on theme toggle, focus rings on cobalt/lime sections, mobile section-head squeeze, Arabic hero overflow, untranslated hero sticker/note.
+
+## Hero head tracking — 1 October 2026
+
+`step-astronaut-cutout.webp` is split by `scripts/split-hero-character.py` into `step-astronaut-body.webp` and `step-astronaut-head.webp` (same 900×1125 canvas, no redraw; the cut follows the dark underside of the helmet ring, and the body carries a hidden dark extension under it so small head motion never opens a gap). `hero-head.js` rotates only the head layer (≤4° Y, ≤2.5° X, ≤0.8° Z, ≤3/2px shift, pivot at the neck) with rAF easing; the outer `.hero-character` keeps the entrance animation. Disabled on touch and `prefers-reduced-motion`; returns to neutral when the pointer leaves the window.
