@@ -31,3 +31,12 @@ Observed QA in cloud Chrome: desktop 1363px, sticky runway progress and deck pos
 The final `rescue.css` and `rescue.js` layer replaces the generic architectural-agency look with STEP's own campaign language. The homepage is built from cobalt grid structure, acid-lime movement marks, tactile paper boards, sharp heavy type, hand-drawn arrows and the real STEP astronaut character. The character is now the hero rather than a decorative card; a small eye-follow response uses pointer position on fine pointers and becomes static under reduced motion. The official supplied wordmark is used in navigation and footer.
 
 Client recognition is split into a compact layered featured cluster and two controlled logo ribbons with a pause control. Capabilities use a varied editorial grid, selected work becomes a two-column project system that remains two-up and compact on phones, and the about section uses the supplied campaign-system board instead of stock architecture. All real case data, project dialogs, client names, bilingual localization, filters, contact flow and verified results remain intact. Motion uses transforms and opacity only, provides a visible pause, and respects reduced-motion preferences.
+
+## Refinement pass — 1 October 2026
+
+`rescue.css` is the single final presentation layer and now owns tokens for type, motion, spacing and both themes (dark: navy surface ladder `--bg/--s1/--s2/--s3`; light: paper/white/navy). The superseded dark-mode block in `reference-rebuild.css` was removed.
+
+- **Motion:** one easing (`--ease-out`), five durations (160/220/300/600/850ms). Reveals are grouped (`data-reveal`, 24px rise, ≤60ms stagger) and drop their hook after playing so hover transforms are never shadowed by animation fill. Hero entrance ≈1s. Cursor ring and CTA pull share one rAF in `forward.js`. Theme toggle uses a 220ms colour-only transition via `.theme-switching` (never on first load).
+- **Type:** `--fs-display-xl … --fs-label` with a separate Arabic scale (`html[lang=ar]`): no tracking, taller line-heights, weights 800/700, `font-synthesis:none`, nav/CTA 15px.
+- **RTL:** logical offsets, direction-aware hover (`--dir`), flipped directional glyphs, LTR ribbons (seamless loop in RTL), hero artwork no longer mirrored.
+- **Fixes:** white-on-lime contact text, services card contrast, case-card hover overridden by animation fill, 4px layout shift on theme toggle, focus rings on cobalt/lime sections, mobile section-head squeeze, Arabic hero overflow, untranslated hero sticker/note.

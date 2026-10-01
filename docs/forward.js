@@ -16,14 +16,21 @@
  document.querySelectorAll('main>section,footer').forEach(section=>{section.querySelector('h2')?.classList.add('journey-heading');journey.observe(section);});
  const sections=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){nav.querySelectorAll('a').forEach(a=>{if(a.hash==='#'+e.target.id)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});}}),{rootMargin:'-15% 0px -55% 0px'});
  document.querySelectorAll('main>section[id]').forEach(s=>sections.observe(s));
- const ring=document.getElementById('cursorRing');let cursorFrame=0,x=0,y=0;
- document.addEventListener('pointermove',e=>{if(!fine.matches||reduced.matches||e.pointerType==='touch')return;const project=e.target.closest('.case-cover'),gallery=e.target.closest('.projects'),link=e.target.closest('a,button,summary');ring.classList.toggle('active',!!(project||gallery||link));ring.classList.toggle('link-ring',!!link&&!project);ring.textContent=project?'VIEW':gallery?'DRAG →':'';x=e.clientX;y=e.clientY;if(!cursorFrame)cursorFrame=requestAnimationFrame(()=>{ring.style.transform=`translate(${x-27}px,${y-27}px)`;cursorFrame=0;});},{passive:true});
- document.addEventListener('pointerleave',()=>ring.classList.remove('active'));
- reduced.addEventListener('change',()=>{ring.classList.remove('active');cancelAnimationFrame(frame);frame=0;});
- document.querySelectorAll('.text-link,.submit').forEach(el=>{
-  let bounds;el.addEventListener('pointerenter',()=>bounds=el.getBoundingClientRect());
-  el.addEventListener('pointermove',e=>{if(!fine.matches||reduced.matches)return;const r=bounds||el.getBoundingClientRect();el.style.translate=`${Math.max(-4,Math.min(4,(e.clientX-r.left-r.width/2)*.03))}px ${Math.max(-4,Math.min(4,(e.clientY-r.top-r.height/2)*.06))}px`;},{passive:true});
-  el.addEventListener('pointerleave',()=>el.style.translate='0 0');
- });
+ // One shared pointer frame: ring position + subtle CTA pull are written together, only while the pointer moves.
+ const ring=document.getElementById('cursorRing');let pointerFrame=0,px=0,py=0,magnet=null,magnetBounds=null,magnetX=0,magnetY=0;
+ const writePointer=()=>{pointerFrame=0;ring.style.translate=`${px-27}px ${py-27}px`;if(magnet)magnet.style.translate=`${magnetX}px ${magnetY}px`;};
+ const schedule=()=>{if(!pointerFrame)pointerFrame=requestAnimationFrame(writePointer);};
+ const releaseMagnet=()=>{if(magnet)magnet.style.translate='';magnet=null;magnetBounds=null;};
+ document.addEventListener('pointermove',e=>{
+  if(!fine.matches||reduced.matches||e.pointerType==='touch')return;
+  const project=e.target.closest('.case-cover'),link=e.target.closest('a,button,summary'),cta=e.target.closest('.text-link,.submit');
+  ring.classList.toggle('active',!!(project||link));ring.classList.toggle('link-ring',!!link&&!project);
+  const label=project?(document.documentElement.lang==='ar'?'عرض':'VIEW'):'';if(ring.textContent!==label)ring.textContent=label;
+  if(cta!==magnet){releaseMagnet();if(cta){magnet=cta;magnetBounds=cta.getBoundingClientRect();}}
+  if(magnet){magnetX=Math.max(-3,Math.min(3,(e.clientX-magnetBounds.left-magnetBounds.width/2)*.03));magnetY=Math.max(-3,Math.min(3,(e.clientY-magnetBounds.top-magnetBounds.height/2)*.05));}
+  px=e.clientX;py=e.clientY;schedule();
+ },{passive:true});
+ document.addEventListener('pointerleave',()=>{ring.classList.remove('active','link-ring');releaseMagnet();});
+ reduced.addEventListener('change',()=>{ring.classList.remove('active');releaseMagnet();cancelAnimationFrame(frame);frame=0;});
  document.getElementById('projectForm').addEventListener('submit',event=>{event.preventDefault();const data=new FormData(event.currentTarget),text=['Hello STEP, I would like to discuss a project.','','Name: '+data.get('name'),'Company: '+(data.get('company')||'Not specified'),'Service: '+data.get('service'),'Brief: '+data.get('message')].join('\n');window.open('https://wa.me/201044824418?text='+encodeURIComponent(text),'_blank','noopener');});
 })();

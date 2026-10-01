@@ -11,42 +11,4 @@ html[lang=ar] .hero h1{font-size:clamp(45px,5.7vw,80px);line-height:1.3}html[lan
 @media(max-width:600px){.container{width:calc(100% - 40px)}.nav{height:70px;gap:9px}.nav-links.open{top:70px}.brand img{width:96px;height:36px}.preferences{margin-inline-start:auto}.preference-button{min-width:36px}.hero{padding:114px 0 28px;min-height:790px}.hero-grid{display:block;min-height:620px}.hero-copy{width:100%;padding-top:0}.hero h1{font-size:clamp(37px,10.3vw,62px);letter-spacing:-.055em;line-height:1.08}.hero-line{white-space:normal}.hero .kicker{font-size:10px;letter-spacing:.13em;margin-bottom:22px}.hero-bottom{margin-top:17px;gap:10px}.hero-bottom p{font-size:15px;margin-bottom:10px}.hero .text-link,.hero-secondary{min-height:44px;font-size:12px;padding:9px 16px;gap:13px}.hero-visual{inset:180px -20px -20px -20px;height:auto;min-height:0;z-index:-1}.hero-photo{object-position:70% center;animation-duration:.7s}.hero-visual:after{background:linear-gradient(#080e16,transparent 28%,transparent 70%,#080e16),linear-gradient(90deg,#080e16bb,transparent 75%)}.hero-shift{width:46%;height:35px;top:48%;right:0}.hero .hero-hand{font-size:34px;right:30px;bottom:70px}.hero-facts{margin-top:260px;max-width:none;gap:14px}.hero-facts strong{font-size:22px}.hero-facts span{font-size:10px;line-height:1.5}.hero-facts>div{padding-inline-start:14px}.side-label{bottom:15px;right:20px;font-size:9px}.hero-client-strip{padding:25px 0 10px}.trust-inner>span{font-size:10px;margin-bottom:20px}.trust-logos{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.trust-logos img{height:34px;width:100%}.partner-directory>summary{font-size:12px;padding-bottom:20px}.section,.work,.evidence{padding:55px 0}.section.partners{padding:0}.section-head h2{font-size:34px;line-height:1.08}.section-head p{font-size:14px}.index{font-size:10px}.service-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.service{display:flex;padding:20px 16px;min-height:290px;gap:0}.service h3{font-size:20px;margin-bottom:12px}.service p{font-size:13px;line-height:1.55}.service .num{margin-bottom:20px}.service .arrow{margin-top:auto;font-size:12px;align-self:flex-start;padding-top:20px}.projects{gap:14px}.case-card{flex-basis:74%;border-radius:5px}.case-cover{aspect-ratio:.9}.case-summary{min-height:85px;padding:15px}.case-summary h3{font-size:22px}.case-summary span{font-size:10px}.runway-controls{margin-top:12px}.process{padding:0}.process-grid{display:grid;grid-template-columns:1fr}.process-title{padding:50px 20px 40px}.process-title h2{font-size:42px}.process-title p{font-size:15px}.about-photo{min-height:330px}.about-words{font-size:30px;right:15%;top:15%}.steps{padding:25px 20px;gap:20px}.step{gap:10px}.step p{font-size:13px}.step h3{font-size:20px}.evidence .section-head h2{font-size:34px}.console-grid{grid-template-columns:1fr}.kpi-number{font-size:46px}.insight-grid{grid-template-columns:1fr;gap:35px}.insight-grid img{height:230px}.insight-grid h3{font-size:25px;max-width:none}.insight-grid article>span{font-size:11px}.contact{padding:55px 0}.contact h2{font-size:48px}.contact .form{padding:24px 20px}.contact-intro{font-size:16px}.next-note{font-size:36px}.footer-main{gap:20px}.footer-main .brand img{width:135px;height:48px}.footer-main:after{display:none}.footer-links{gap:18px}.legal{gap:12px;font-size:10px}.legal span:last-child{letter-spacing:.08em}html[lang=ar] .hero h1{font-size:clamp(36px,10vw,56px)}html[lang=ar] .hero-visual{inset:180px -20px -20px}html[lang=ar] .process-title{padding:50px 20px}html[lang=ar] .hero-facts strong{font-size:22px}}
 @media(prefers-reduced-motion:reduce){.hero-photo{animation:none}.hero-line>span{animation:none}.hero-shift{animation:none;translate:0 0}}
 
-/* Dark mode is a complete surface system; brand accents remain accents. */
-html[data-theme=dark] .hero-client-strip,
-html[data-theme=dark] .section.partners,
-html[data-theme=dark] .services,
-html[data-theme=dark] .insights,
-html[data-theme=dark] footer{background:#0b0f1a;color:#fff}
-html[data-theme=dark] .services .section-head p,
-html[data-theme=dark] .insight-grid details p,
-html[data-theme=dark] .partner-grid figcaption,
-html[data-theme=dark] .legal{color:#b7becc}
-html[data-theme=dark] .services .index,
-html[data-theme=dark] .insights .index{color:#c7ff00}
-html[data-theme=dark] .service,
-html[data-theme=dark] .service:nth-child(2),
-html[data-theme=dark] .service:nth-child(4){background:#151c2c;color:#fff;border-color:#31394a;box-shadow:none}
-html[data-theme=dark] .service:nth-child(1){background:#101622}
-html[data-theme=dark] .service:nth-child(3){background:#102350;border-color:#2454ad}
-html[data-theme=dark] .partner-directory>summary,
-html[data-theme=dark] .partner-grid,
-html[data-theme=dark] .legal{border-color:#31394a}
-html[data-theme=dark] .partner-grid{background:#31394a}
-html[data-theme=dark] .partner-grid .club-card{background:#101622}
-html[data-theme=dark] .club-logo{background:#151c2c}
-html[data-theme=dark] .work:before{background:#0b0f1a}
-html[data-theme=dark] .process{background:#101e3b}
-html[data-theme=dark] .contact{background:#121c20;color:#fff;border-block:1px solid #334137}
-html[data-theme=dark] .contact h2 span,
-html[data-theme=dark] .contact .next-note{color:#c7ff00}
-html[data-theme=dark] .contact-intro{color:#c3ccd3}
-html[data-theme=dark] .contact-direct a{border-color:#3b4944;color:#fff}
-html[data-theme=dark] .contact-direct a:hover{color:#c7ff00}
-html[data-theme=dark] .contact .form{border:1px solid #31394a}
-html[data-theme=dark] .footer-main .brand img{filter:brightness(0) invert(1)}
-html[data-theme=dark] .footer-links a:hover{color:#c7ff00}
-html[data-theme=dark] .trust-logos img{filter:grayscale(1) brightness(1.7);mix-blend-mode:screen}
-html[data-theme=dark] .trust-logos img[src*="oil-zone"],
-html[data-theme=dark] .trust-logos img[src*="deer"],
-html[data-theme=dark] .trust-logos img[src*="fasla"]{filter:grayscale(1) invert(1);mix-blend-mode:screen}
-html[data-theme=dark] :focus-visible{outline-color:#c7ff00}
+/* Dark-theme surfaces now live in rescue.css (tokens). */

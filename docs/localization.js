@@ -114,7 +114,7 @@
     'NOT NOISE.':'مش دوشة.','DIRECTION.':'اتجاه واضح.','Strategy':'استراتيجية','Idea':'فكرة','Creative':'إبداع',
     'See the work':'شوف شغلنا','REAL IDEAS.':'أفكار حقيقية.','REAL PEOPLE.':'ناس حقيقية.','REAL MOVEMENT.':'حركة حقيقية.','REAL RESULTS.':'نتائج حقيقية.',
     '02 / IN GOOD COMPANY':'02 / وسط شركاء النجاح','Different industries. Distinct identities. One shared ambition: work that moves people.':'مجالات مختلفة وهويات مميزة، يجمعنا طموح واحد: شغل يحرّك الناس.','Meet our partners':'تعرّف على شركائنا',
-    '03 / THE NETWORK':'03 / شبكة شركائنا','Twenty brands. Different worlds. A growing network shaped by honest collaboration and ambitious work.':'عشرون علامة من عوالم مختلفة، جمعتهم شراكات حقيقية وطموح كبير.','Your next chapter starts here':'خطوتك الجاية تبدأ هنا'
+    '03 / THE NETWORK':'03 / شبكة شركائنا','MAKE':'','Same people.':'نفس الناس.','Bigger stories.':'حكايات أكبر.','VIEW':'عرض','Twenty brands. Different worlds. A growing network shaped by honest collaboration and ambitious work.':'عشرون علامة من عوالم مختلفة، جمعتهم شراكات حقيقية وطموح كبير.','Your next chapter starts here':'خطوتك الجاية تبدأ هنا'
   });
   const reverse = new Map(Object.entries(dictionary).filter(([,v])=>v).map(([k,v])=>[v,k]));
   const originals=new WeakMap();
@@ -156,11 +156,11 @@
     langButton.textContent=language==='ar'?'EN':'عربي';langButton.lang=language==='ar'?'en':'ar';langButton.setAttribute('aria-label',language==='ar'?'Switch to English':'التبديل إلى العربية');
     themeButton.textContent=light?'☾':'☀';themeButton.setAttribute('aria-label',language==='ar'?(light?'تفعيل الوضع الليلي':'تفعيل الوضع الفاتح'):(light?'Switch to dark mode':'Switch to light mode'));
     themeButton.setAttribute('aria-pressed',String(!light));
-    document.querySelector('meta[name="theme-color"]').content=light?'#f7f8fc':'#05070c';
+    document.querySelector('meta[name="theme-color"]').content='#0B0F1A';
   }
   function setLanguage(lang){language=lang;document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';localize();updateControls();document.title=lang==='ar'?'STEP — وكالة الإبداع والتسويق':'STEP — Creative & Performance Agency';}
   langButton.addEventListener('click',()=>{setLanguage(language==='ar'?'en':'ar');remember('step-language',language)});
-  themeButton.addEventListener('click',()=>{const next=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=next;remember('step-theme',next);updateControls()});
+  themeButton.addEventListener('click',()=>{const root=document.documentElement;root.classList.add('theme-switching');clearTimeout(themeButton._t);themeButton._t=setTimeout(()=>root.classList.remove('theme-switching'),320);const next=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=next;remember('step-theme',next);updateControls()});
   // Covers newly opened project stories and stateful menu/motion labels.
   const observer=new MutationObserver(records=>{observer.disconnect();for(const record of records){if(record.type==='attributes')localize(record.target);else if(record.target.nodeType===3)localize(record.target.parentElement);else localize(record.target)}observe()});
   function observe(){observer.observe(document.body,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:['aria-label']})}
