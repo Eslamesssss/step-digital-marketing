@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "pinterest": {
+      "command": "bash",
+      "args": ["scripts/pinterest-mcp.sh"]
+    }
+  }
+}
